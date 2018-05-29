@@ -79,9 +79,9 @@ namespace GMap.NET.Core.Properties {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] System_Data_SQLite {
+        internal static byte[] System_Data_SQLite_x64 {
             get {
-                object obj = ResourceManager.GetObject("System_Data_SQLite", resourceCulture);
+                object obj = ResourceManager.GetObject("System_Data_SQLite_x64", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -89,9 +89,9 @@ namespace GMap.NET.Core.Properties {
         /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static byte[] System_Data_SQLite_32 {
+        internal static byte[] System_Data_SQLite_x86 {
             get {
-                object obj = ResourceManager.GetObject("System_Data_SQLite_32", resourceCulture);
+                object obj = ResourceManager.GetObject("System_Data_SQLite_x86", resourceCulture);
                 return ((byte[])(obj));
             }
         }

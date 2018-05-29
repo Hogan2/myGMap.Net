@@ -33,9 +33,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=AMD64">
+    <Reference Include="System.Data.SQLite_x64, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\sqlite\sqlite-netFx46-binary-bundle-x64-2015-1.0.108.0\System.Data.SQLite.dll</HintPath>
+      <HintPath>..\sqlite\sqlite-netFx46-binary-bundle-x64-2015-1.0.108.0\System.Data.SQLite_x64.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -138,10 +138,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\System.Data.SQLite_32.dll" />
+    <None Include="Resources\System.Data.SQLite_x64.dll" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\System.Data.SQLite.dll" />
+    <None Include="Resources\System.Data.SQLite_x86.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
