@@ -116,16 +116,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Testing\MapTest\MapTest\MapTest.csproj">
-      <Project>{f87e359e-5828-4f74-86f3-bc9f34bd7f5f}</Project>
-      <Name>MapTest</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Page Include="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Testing\MapTest\MapTest.csproj">
+      <Project>{f87e359e-5828-4f74-86f3-bc9f34bd7f5f}</Project>
+      <Name>MapTest</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
