@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GMap.Net", "GMap.Net", "{CC8D40E7-2C28-4355-947F-AD7697905B5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{1411244B-2CC6-4D34-985E-75DFACEC8F0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{86AAD755-82E6-4EF0-BD04-65BF153FF510}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.WindowsPresentation", "D:\LOG\CODE\VS2017\CustomisedGMap\Demo\Demo.WindowsPresentation\Demo.WindowsPresentation\Demo.WindowsPresentation.csproj", "{15EE26A5-1D22-40F7-8C5B-6310E8F7B226}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapTest", "D:\LOG\CODE\VS2017\CustomisedGMap\Testing\MapTest\MapTest\MapTest.csproj", "{F87E359E-5828-4F74-86F3-BC9F34BD7F5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMap.NET.Core", "D:\LOG\CODE\VS2017\CustomisedGMap\GMap.Net\GMap.NET.Core\GMap.NET.Core.csproj", "{E0B1DCD9-0F67-4DEE-8AAD-76665E7B0BF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMap.NET.WindowsPresentation", "D:\LOG\CODE\VS2017\CustomisedGMap\GMap.Net\GMap.NET.WindowsPresentation\GMap.NET.WindowsPresentation.csproj", "{13CED532-197C-45AC-80FD-FF055DDFE8F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15EE26A5-1D22-40F7-8C5B-6310E8F7B226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15EE26A5-1D22-40F7-8C5B-6310E8F7B226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15EE26A5-1D22-40F7-8C5B-6310E8F7B226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15EE26A5-1D22-40F7-8C5B-6310E8F7B226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F87E359E-5828-4F74-86F3-BC9F34BD7F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F87E359E-5828-4F74-86F3-BC9F34BD7F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F87E359E-5828-4F74-86F3-BC9F34BD7F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F87E359E-5828-4F74-86F3-BC9F34BD7F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0B1DCD9-0F67-4DEE-8AAD-76665E7B0BF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B1DCD9-0F67-4DEE-8AAD-76665E7B0BF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0B1DCD9-0F67-4DEE-8AAD-76665E7B0BF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B1DCD9-0F67-4DEE-8AAD-76665E7B0BF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13CED532-197C-45AC-80FD-FF055DDFE8F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13CED532-197C-45AC-80FD-FF055DDFE8F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13CED532-197C-45AC-80FD-FF055DDFE8F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13CED532-197C-45AC-80FD-FF055DDFE8F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{15EE26A5-1D22-40F7-8C5B-6310E8F7B226} = {1411244B-2CC6-4D34-985E-75DFACEC8F0A}
+		{F87E359E-5828-4F74-86F3-BC9F34BD7F5F} = {86AAD755-82E6-4EF0-BD04-65BF153FF510}
+		{E0B1DCD9-0F67-4DEE-8AAD-76665E7B0BF1} = {CC8D40E7-2C28-4355-947F-AD7697905B5E}
+		{13CED532-197C-45AC-80FD-FF055DDFE8F8} = {CC8D40E7-2C28-4355-947F-AD7697905B5E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BECEE3E-A8F4-441C-BA9D-FC85F5D5F52C}
+	EndGlobalSection
+EndGlobal
