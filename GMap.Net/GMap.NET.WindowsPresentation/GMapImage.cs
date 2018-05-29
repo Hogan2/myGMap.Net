@@ -121,8 +121,10 @@ namespace GMap.NET.WindowsPresentation
 
                 if (m != null)
                 {
-                    ret = new GMapImage();
-                    ret.Img = m;
+                    ret = new GMapImage
+                    {
+                        Img = m
+                    };
                     if (ret.Img.CanFreeze)
                     {
                         ret.Img.Freeze();

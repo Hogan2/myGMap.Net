@@ -1,7 +1,8 @@
 ﻿<UserControl x:Class="MapTest.Views.MapTestView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mymap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation">
     <Grid>
-        <Button Content="222"/>
+        <mymap:GMapControl x:Name="GMapCtrl" MaxZoom="18" MinZoom="5"/>
     </Grid>
 </UserControl>

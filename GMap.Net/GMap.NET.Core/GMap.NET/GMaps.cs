@@ -35,27 +35,27 @@ namespace GMap.NET
         /// <summary>
         /// is map ussing cache for routing
         /// </summary>
-        public bool UseRouteCache = true;
+        public bool UseRouteCache = false;
 
         /// <summary>
         /// is map using cache for geocoder
         /// </summary>
-        public bool UseGeocoderCache = true;
+        public bool UseGeocoderCache = false;
 
         /// <summary>
         /// is map using cache for directions
         /// </summary>
-        public bool UseDirectionsCache = true;
+        public bool UseDirectionsCache = false;
 
         /// <summary>
         /// is map using cache for placemarks
         /// </summary>
-        public bool UsePlacemarkCache = true;
+        public bool UsePlacemarkCache = false;
 
         /// <summary>
         /// is map ussing cache for other url
         /// </summary>
-        public bool UseUrlCache = true;
+        public bool UseUrlCache = false;
 
         /// <summary>
         /// is map using memory cache for tiles
@@ -335,10 +335,12 @@ namespace GMap.NET
 #endif
                     {
                         CacheEngine = null;
-                        CacheEngine = new Thread(new ThreadStart(CacheEngineLoop));
-                        CacheEngine.Name = "CacheEngine";
-                        CacheEngine.IsBackground = false;
-                        CacheEngine.Priority = ThreadPriority.Lowest;
+                        CacheEngine = new Thread(new ThreadStart(CacheEngineLoop))
+                        {
+                            Name = "CacheEngine",
+                            IsBackground = false,
+                            Priority = ThreadPriority.Lowest
+                        };
 
                         abortCacheLoop = false;
                         CacheEngine.Start();
@@ -414,10 +416,7 @@ namespace GMap.NET
             Debug.WriteLine("CacheEngine: start");
             int left = 0;
 
-            if (OnTileCacheStart != null)
-            {
-                OnTileCacheStart();
-            }
+            OnTileCacheStart?.Invoke();
 
             bool startEvent = false;
 
@@ -442,16 +441,10 @@ namespace GMap.NET
                         {
                             startEvent = false;
 
-                            if (OnTileCacheStart != null)
-                            {
-                                OnTileCacheStart();
-                            }
+                            OnTileCacheStart?.Invoke();
                         }
 
-                        if (OnTileCacheProgress != null)
-                        {
-                            OnTileCacheProgress(left);
-                        }
+                        OnTileCacheProgress?.Invoke(left);
 
                         #region -- save --
                         // check if stream wasn't disposed somehow
@@ -507,10 +500,7 @@ namespace GMap.NET
                         {
                             startEvent = true;
 
-                            if (OnTileCacheComplete != null)
-                            {
-                                OnTileCacheComplete();
-                            }
+                            OnTileCacheComplete?.Invoke();
                         }
 
                         if (abortCacheLoop || noMapInstances || !WaitForCache.WaitOne(33333, false) || noMapInstances)
@@ -534,10 +524,7 @@ namespace GMap.NET
 
             if (!startEvent)
             {
-                if (OnTileCacheComplete != null)
-                {
-                    OnTileCacheComplete();
-                }
+                OnTileCacheComplete?.Invoke();
             }
         }
 

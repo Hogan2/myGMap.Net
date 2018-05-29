@@ -138,10 +138,7 @@ namespace GMap.NET.Internals
                         GoToCurrentPositionOnZoom();
                         UpdateBounds();
 
-                        if (OnMapZoomChanged != null)
-                        {
-                            OnMapZoomChanged();
-                        }
+                        OnMapZoomChanged?.Invoke();
                     }
                 }
             }
@@ -180,8 +177,7 @@ namespace GMap.NET.Internals
                         GoToCurrentPosition();
                     }
 
-                    if (OnCurrentPositionChanged != null)
-                        OnCurrentPositionChanged(position);
+                    OnCurrentPositionChanged?.Invoke(position);
                 }
             }
         }
@@ -248,12 +244,10 @@ namespace GMap.NET.Internals
                             zoomToArea = false;
                         }
 
-                        if (OnMapTypeChanged != null)
-                        {
-                            OnMapTypeChanged(value);
-                        }
+                        OnMapTypeChanged?.Invoke(value);
                     }
                 }
+
             }
         }
 
@@ -393,10 +387,12 @@ namespace GMap.NET.Internals
 
                 GoToCurrentPosition();
 
-                invalidator = new BackgroundWorker();
-                invalidator.WorkerSupportsCancellation = true;
-                invalidator.WorkerReportsProgress = true;
-                invalidator.DoWork += new DoWorkEventHandler(invalidatorWatch);
+                invalidator = new BackgroundWorker
+                {
+                    WorkerSupportsCancellation = true,
+                    WorkerReportsProgress = true
+                };
+                invalidator.DoWork += new DoWorkEventHandler(InvalidatorWatch);
                 invalidator.RunWorkerAsync();
 
                 //if(x == 1)
@@ -415,7 +411,7 @@ namespace GMap.NET.Internals
         internal readonly object invalidationLock = new object();
         internal DateTime lastInvalidation = DateTime.Now;
 
-        void invalidatorWatch(object sender, DoWorkEventArgs e)
+        void InvalidatorWatch(object sender, DoWorkEventArgs e)
         {
             var w = sender as BackgroundWorker;
 
@@ -716,10 +712,7 @@ namespace GMap.NET.Internals
                 IsDragging = false;
             }
 
-            if (OnMapDrag != null)
-            {
-                OnMapDrag();
-            }
+            OnMapDrag?.Invoke();
         }
 
         /// <summary>
@@ -744,12 +737,10 @@ namespace GMap.NET.Internals
                 LastLocationInBounds = Position;
                 Position = FromLocalToLatLng((int)Width / 2, (int)Height / 2);
 
-                if (OnMapDrag != null)
-                {
-                    OnMapDrag();
-                }
+                OnMapDrag?.Invoke();
             }
         }
+
 
         /// <summary>
         /// cancels tile loaders and bounds checker
@@ -1093,10 +1084,7 @@ namespace GMap.NET.Internals
 #endif
             Debug.WriteLine(ctid + " - OnTileLoadComplete: " + lastTileLoadTimeMs + "ms, MemoryCacheSize: " + GMaps.Instance.MemoryCache.Size + "MB");
 
-            if (OnTileLoadComplete != null)
-            {
-                OnTileLoadComplete(lastTileLoadTimeMs);
-            }
+            OnTileLoadComplete?.Invoke(lastTileLoadTimeMs);
         }
 
         public AutoResetEvent Refresh = new AutoResetEvent(false);
@@ -1242,10 +1230,7 @@ namespace GMap.NET.Internals
 #endif
             updatingBounds = false;
 
-            if (OnTileLoadStart != null)
-            {
-                OnTileLoadStart();
-            }
+            OnTileLoadStart?.Invoke();
         }
 
         /// <summary>
@@ -1276,7 +1261,7 @@ namespace GMap.NET.Internals
                 if (invalidator != null)
                 {
                     invalidator.CancelAsync();
-                    invalidator.DoWork -= new DoWorkEventHandler(invalidatorWatch);
+                    invalidator.DoWork -= new DoWorkEventHandler(InvalidatorWatch);
                     invalidator.Dispose();
                     invalidator = null;
                 }
